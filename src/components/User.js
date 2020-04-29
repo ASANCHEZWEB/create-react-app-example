@@ -1,14 +1,12 @@
 import React from "react";
 
 function User(props) {
-
-console.log(props)
-
   return (
     <div>
       <h2 style={{ backgroundColor: props.theColor }}>
-        Hello, {props.firstName}!
+        Hello, {props.firstName} {props.lastName}!
       </h2>
+      <img src={props.image} width="370" height="300" alt="imagen prueba"/>
     </div>
   );
 }
