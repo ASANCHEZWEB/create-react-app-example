@@ -20,10 +20,36 @@ class App extends React.Component {
     backColor: "yellow",
   };
 
+  colorMapper = () => {
+    return "#" + Math.floor(Math.random() * 16777215).toString(16);
+  };
+
   clickHandler = () => {
-    this.setState({
-      clickCount: this.state.clickCount + 1,
-    });
+    const newCount = this.state.clickCount + 1;
+
+    if (newCount !== 5) {
+      this.setState({
+        clickCount: newCount,
+        backColor: this.colorMapper(),
+      });
+    } else {
+      this.setState({
+        clickCount: newCount,
+        backColor: "yellow",
+        userA: {
+          firstName: "Jon",
+          lastName: "Doe",
+          avatarUrl:
+            "https://www.refreshmiami.com/wp-content/uploads/2018/07/55085_logo-ironhack.png",
+        },
+        userB: {
+          firstName: "Susanne",
+          lastName: "Smith",
+          avatarUrl:
+            "https://s3.amazonaws.com/owler-image/logo/ironhack_owler_20180828_221413_original.png",
+        },
+      });
+    }
   };
 
   render() {
@@ -48,6 +74,5 @@ class App extends React.Component {
     );
   }
 }
-
 
 export default App;
