@@ -1,12 +1,14 @@
 import React from "react";
 import "./App.css";
-import { listItems } from "./components/ListDemo";
+import { MoviesList } from "./components/ListDemo";
 
 class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <ul>{listItems}</ul>
+        <div>
+          <MoviesList />
+        </div>
       </div>
     );
   }
