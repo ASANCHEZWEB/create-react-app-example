@@ -1,14 +1,11 @@
 import React from "react";
 import "./App.css";
-import { MoviesList } from "./components/ListDemo";
-
+import DynamicMoviesList from "./components/dynamicListsDemo/DynamicMoviesList";
 class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <div>
-          <MoviesList />
-        </div>
+        <DynamicMoviesList />
       </div>
     );
   }
