@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ImprovedCard from './ImprovedCard';
+import AddMovie from './AddMovie';
 
 class DynamicMoviesList extends Component {
     constructor(){
@@ -25,6 +26,14 @@ class DynamicMoviesList extends Component {
             movies: moviesCopy
         })
     }
+
+    addMovieHandler = (theMovie) => {
+        const moviesCopy = [...this.state.movies];
+        moviesCopy.push(theMovie);
+        this.setState({
+          movies: moviesCopy
+        })
+      }
     //array de pelis filtradas 
     filteredMovies;
 
@@ -36,6 +45,7 @@ class DynamicMoviesList extends Component {
 
         return (
             <div>
+             <AddMovie addTheMovie={this.addMovieHandler} />
                 {
                     //usamos las peliis filtradas para pintarlas usando el componente ImprovedCard
                     this.filteredMovies.map((oneMovie, index) => {
